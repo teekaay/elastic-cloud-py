@@ -4,6 +4,7 @@ from .elasticsearch_cluster import ElasticsearchClusterClient
 from .kibana_cluster import KibanaClusterClient
 from .stacks import StackClient
 from .platform import PlatformClient
+from .api_docs import ApiDocsClient
 
 class ElasticCloudSession(RequestsHttpConnection):
     """
@@ -34,3 +35,4 @@ class ElasticCloud(object):
         self.kibana_cluster = KibanaClusterClient(self.session)
         self.platform = PlatformClient(self.session)
         self.allocators = PlatformAllocatorClient(self.session)
+        self.api_docs = ApiDocsClient(self.session)
