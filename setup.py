@@ -11,8 +11,19 @@ f = open(join(dirname(__file__), 'README.rst'))
 long_description = f.read().strip()
 f.close()
 
-install_requires = open(join(dirname(__file__), 'requirements.txt')).read().split('\n')
-tests_require = open(join(dirname(__file__), 'requirements.dev.txt')).read().split('\n')
+install_requires = [
+    'elasticsearch==6.1.1'
+]
+
+develop_requires = [
+    'nose',
+    'flake8'
+]
+
+docs_requires = [
+    'sphinx',
+    'sphinx_rtd_theme'
+]
 
 setup(
     name = 'elastic_cloud',
@@ -28,7 +39,7 @@ setup(
         exclude=('test*', )
     ),
     classifiers = [
-        "Development Status :: 1 - Experimental",
+        "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: Apache Software License",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
@@ -45,6 +56,9 @@ setup(
     install_requires=install_requires,
 
     extras_require={
-        'develop': tests_require + ["sphinx", "sphinx_rtd_theme"]
+        'develop': develop_requires
+        'docs': docs_requires
     },
+
+    keywords='elastic-cloud elastic'
 )
