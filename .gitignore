@@ -1,0 +1,19 @@
+# python
+# -------
+*.pyc
+*.pyo
+__pycache__
+
+# setup tools
+# -------
+
+build
+dist
+*.egg-info
+
+# sphinx
+# -------
+docs/_build
+
+# misc
+.DS_STORE
