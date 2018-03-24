@@ -133,8 +133,8 @@ To build all artifacts (docs and the distribution), run
 
 ::
 
-    make build-py
-    make docs-html
+    make dist
+    make docs
 
 
 Indices and tables
