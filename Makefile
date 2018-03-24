@@ -26,7 +26,7 @@ test:
 	nosetests
 
 lint:
-	flake8 --statistics --exit-zero
+	flake8 --statistics --exit-zero elastic_cloud/**/*.py
 
 clean: clean-pyc clean-docs clean-build
 
