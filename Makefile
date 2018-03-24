@@ -7,17 +7,26 @@ all: clean lint test docs-html
 
 help:
 	@echo ""
+	@echo "  build      to build python and html"
+	@echo "  build-py   to build python distribution"
+	@echo "  build-docs	to build html documentation"
 	@echo "  test		to run unit tests"
-	@echo "  docs-html	to build html documentation"
+	@echo "  lint       to run flake8"
+	@echo "  clean 		to remove generated files"
+
+build: build-py build-docs
+
+build-py:
+	python setup.py build
+
+build-docs:
+	make -C docs html
 
 test:
 	nosetests
 
 lint:
 	flake8 --statistics --exit-zero
-
-docs-html:
-	make -C docs html
 
 clean: clean-pyc clean-docs clean-build
 

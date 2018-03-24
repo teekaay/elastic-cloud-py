@@ -105,6 +105,31 @@ Therefor, they have (among others) two common ways of handling them
     >>> print(get_platform_info_result.json())
     {'eula_accepted': True, 'phone_home'enabled': True, 'services': [...], 'version': '<platform-version>'}
 
+Development
+-----------
+
+Testing
+~~~~~~~~
+
+To run all unit tests 
+
+::
+
+    make test
+
+Currently no integration or functional tests are implemented.
+
+Building 
+~~~~~~~~
+
+To build all artifacts (docs and the distribution), run 
+
+::
+
+    make build-py
+    make docs-html
+
+
 Indices and tables
 ------------------
 
