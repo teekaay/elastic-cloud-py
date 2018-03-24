@@ -56,7 +56,7 @@ setup(
     install_requires=install_requires,
 
     extras_require={
-        'develop': develop_requires
+        'develop': develop_requires,
         'docs': docs_requires
     },
 
