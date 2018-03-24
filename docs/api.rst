@@ -56,6 +56,15 @@ Stack Client
     :inherited-members:
     :show-inheritance:
 
+API Docs Client
+---------------
+
+.. automodule:: elastic_cloud.client.api_docs
+    :members: 
+    :undoc-members:
+    :inherited-members:
+    :show-inheritance:
+
 Enterprise 
 ----------
 
