@@ -1,5 +1,6 @@
 from elastic_cloud.utils import ElasticCloudNamespacedClient
 from elastic_cloud.utils import query_params
+from elastic_cloud.utils import _make_path
 from elastic_cloud.utils import (GET, POST, DELETE, PUT, PATCH)
 
 class ElasticsearchClusterClient(ElasticCloudNamespacedClient):
@@ -75,7 +76,7 @@ class ElasticsearchClusterClient(ElasticCloudNamespacedClient):
         return self.session.perform_request(POST, _make_path('clusters', 'elasticsearch', cluster_id, 'metadata', 'name', new_name))
     
     @query_params('ignore_missing', 'restart_after_update')
-    def stop_maintainance_mode(self, cluster_id, instance_ids=[], body=None, params=None):
+    def set_settings_overrides(self, cluster_id, instance_ids=[], body=None, params=None):
         return self.session.perform_request(POST, _make_path('clusters', 'elasticsearch', cluster_id, 'instances', 
             self._convert_collection_to_path_param(instance_ids), 'settings'), params=params, body=body)
     

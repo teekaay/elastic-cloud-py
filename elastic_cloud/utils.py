@@ -1,5 +1,6 @@
 from elasticsearch.client.utils import _make_path as make_path
 from elasticsearch.client.utils import query_params as qp
+from elasticsearch.client.utils import SKIP_IN_PATH as SIP
 from elastic_cloud import API_VERSION 
 
 GET = 'GET'
@@ -7,6 +8,8 @@ PUT = 'PUT'
 DELETE = 'DELETE'
 PATCH = 'PATCH'
 POST = 'POST'
+
+SKIP_IN_PATH = SIP
 
 def query_params(*args):
     return qp(*args)

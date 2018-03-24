@@ -1,7 +1,4 @@
-from elasticsearch.client.utils import query_params 
-from elasticsearch.client.utils import SKIP_IN_PATH
 from elasticsearch.connection.http_requests import RequestsHttpConnection
-from elastic_cloud.utils import make_path
 from .allocator import PlatformAllocatorClient
 from .elasticsearch_cluster import ElasticsearchClusterClient
 from .kibana_cluster import KibanaClusterClient

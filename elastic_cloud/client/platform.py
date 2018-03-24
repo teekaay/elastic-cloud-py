@@ -1,6 +1,8 @@
 from elastic_cloud.utils import ElasticCloudNamespacedClient
 from elastic_cloud.utils import query_params
-from elastic_cloud.utils import (GET, POST, DELETE, PUT, PATCH)
+from elastic_cloud.utils import _make_path
+from elastic_cloud.utils import (GET, POST, DELETE, PUT)
+from elastic_cloud.utils import SKIP_IN_PATH
 
 class PlatformClient(ElasticCloudNamespacedClient):
     def get_platform_info(self):
