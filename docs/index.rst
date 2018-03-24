@@ -4,6 +4,9 @@ Python Elastic Cloud (Enterprise) Client
 .. image:: https://travis-ci.org/teekaay/elastic-cloud-py.svg?branch=master
     :target: https://travis-ci.org/teekaay/elastic-cloud-py
 
+.. image:: http://elastic-cloud-py.readthedocs.io/en/latest/?badge=latest
+    :target: http://elastic-cloud-py.readthedocs.io/en/latest/?badge=latest
+
 Python client for `Elastic Cloud <https://www.elastic.co/cloud>`_. Its goal is to provide
 an abstraction for all Elastic Cloud related API operations. 
 To get more information about the Elastic Cloud API, visit `this <https://www.elastic.co/guide/en/cloud-enterprise/current/ece-api-reference.html>`_
