@@ -55,10 +55,16 @@ Using ``git`` (uses the current master)
     cd elastic-cloud-py
     python setup.py install
 
-Using ``pip`` (from Github)
+Using ``pip`` 
 
 ::
 
+    pip install elastic-cloud
+
+or, for the latest development version
+  
+::
+    
     pip install https://github.com/teekaay/elastic-cloud-py/archive/master.zip
 
 Example Usage 
