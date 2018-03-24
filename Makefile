@@ -3,23 +3,21 @@
 
 DOCDIR = docs
 
-all: clean lint test docs-html
+all: clean lint test dist docs
 
 help:
 	@echo ""
-	@echo "  build      to build python and html"
-	@echo "  build-py   to build python distribution"
-	@echo "  build-docs	to build html documentation"
+	@echo "  dist       to build python distribution"
+	@echo "  docs	    to build html documentation"
 	@echo "  test		to run unit tests"
 	@echo "  lint       to run flake8"
 	@echo "  clean 		to remove generated files"
 
-build: build-py build-docs
+dist:
+	python setup.py sdist
+	python setup.py bdist_wheel
 
-build-py:
-	python setup.py build
-
-build-docs:
+docs:
 	make -C docs html
 
 test:
