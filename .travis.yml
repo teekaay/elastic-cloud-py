@@ -10,7 +10,7 @@ python:
 before_install: []
 
 install: 
-  - python setup.py install
+  - pip install -e . '.[develop]'
 
 script:
   - make lint
