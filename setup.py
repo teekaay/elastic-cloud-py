@@ -55,6 +55,11 @@ setup(
     ],
     install_requires=install_requires,
 
+    entry_points = {
+        'console_scripts': [
+            'elastic-cloud = elastic_cloud.cli:main']
+    },
+
     extras_require={
         'develop': develop_requires,
         'docs': docs_requires

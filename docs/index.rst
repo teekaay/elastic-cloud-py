@@ -16,6 +16,9 @@ link.
 The main motiviation is to aid in building a solid foundation for building tooling
 around Elastic Cloud without having to write a client again and again.
 
+``elastic_cloud`` comes with a basic command line interface. after installation, run ``elastic-cloud --help``
+to get information about the usage.
+
 .. note::
 
     We will refer to the product `Elastic Cloud Enterprise` as to `Elastic Cloud` in the following.
