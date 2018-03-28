@@ -90,7 +90,7 @@ def main():
         help='the password to authorize with')
     parser.add_argument('--query',
         help='jmespath expression to filter the output')
-    parser.add_argument('--body', 
+    parser.add_argument('--body',
         help='path to a file or raw body')
     parser.add_argument('--list-actions',
         action='store_true',
@@ -103,9 +103,9 @@ def main():
     parser.add_argument('--debug', action='store_true',
         help='enable verbose logging')
     parser.add_argument('--client',
-        choices=[k for k in clients.keys()], 
+        choices=[k for k in clients.keys()],
         help='use an elastic cloud client')
-    parser.add_argument('--action', 
+    parser.add_argument('--action',
         help='execute an api action')
     parser.add_argument('--version',
         action='store_true',
@@ -140,7 +140,7 @@ def main():
                 if doc is not None:
                     print(dedent(doc))
                 print('')
-        return 
+        return
 
     init_logging(level='DEBUG' if args.debug else 'WARNING')
 
@@ -148,14 +148,14 @@ def main():
 
     if parsed_host.scheme not in ('http', 'https'):
         raise ValueError('invalid scheme [{}]'.format(parsed_host.scheme))
-    
+
     ec_args = {
         'host': parsed_host.hostname,
         'port': parsed_host.port or 443,
         'use_ssl': True if parsed_host.scheme == 'https' else False,
         'http_auth': (args.user, args.password)
     }
-    
+
     ec_session = ElasticCloudSession(**ec_args)
 
     if args.client not in clients.keys():
@@ -164,9 +164,9 @@ def main():
 
     client_cls = clients[args.client]
     client = client_cls(ec_session)
-    
+
     action_name = action_to_method(args.action)
-    
+
     try:
         action_fn = getattr(client, action_name)
     except Exception as e:
@@ -175,7 +175,8 @@ def main():
 
     try:
         result = action_fn()
-        final_result = finalize_result(result, query=args.query)
+        status_code, headers, body = result
+        final_result = finalize_result(body, query=args.query)
         print(final_result)
     except Exception as e:
         LOG.error('failed to execute action [%s]: %s', args.action, e)
