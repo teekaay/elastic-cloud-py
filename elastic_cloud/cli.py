@@ -69,6 +69,12 @@ def method_to_action(m):
 def action_to_method(a):
     return a.replace('-', '_')
 
+def finalize_result(result, query=None):
+    if query:
+        return jmespath.search(result, query)
+    else:
+        return result
+
 def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter,
