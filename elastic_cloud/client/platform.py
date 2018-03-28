@@ -11,17 +11,17 @@ class PlatformClient(ElasticCloudNamespacedClient):
 
         Get information about the current platform.
         """
-        return self.session.perform_request(GET, make_path('platform'))
+        return self.session.perform_request(GET, _make_path('platform'))
 
     @query_params()
     def get_snapshot_repositories(self, params=None):
-        return self.session.perform_request(GET, make_path('platform', 'configuration', 'snapshots', 'repositories'))
+        return self.session.perform_request(GET, _make_path('platform', 'configuration', 'snapshots', 'repositories'))
     
     @query_params()
     def get_snapshot_repository(self, repository_name, params=None):
         if repository_name in SKIP_IN_PATH:
             raise ValueError('empty value passed for a required argument [repository_name]')
-        return self.session.perform_request(GET, make_path('platform', 'configuration', 'snapshots', 'repositories', repository_name))
+        return self.session.perform_request(GET, _make_path('platform', 'configuration', 'snapshots', 'repositories', repository_name))
 
     @query_params()
     def delete_snapshot_repository(self, repository_name, params=None):
