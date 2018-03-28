@@ -17,6 +17,7 @@ dist:
 	python setup.py sdist
 	python setup.py bdist_wheel
 
+.PHONY: docs
 docs:
 	make -C docs html
 
@@ -29,14 +30,14 @@ lint:
 clean: clean-pyc clean-docs clean-build
 
 clean-pyc:
-	find . -name '*.pyc' -exec rm --force {} +
-	find . -name '*.pyo' -exec rm --force {} +
-	find . -name '__pycache' -exec rm -r --force {} + 
+	find . -name '*.pyc' -exec rm -f {} +
+	find . -name '*.pyo' -exec rm -f {} +
+	find . -name '__pycache' -exec rm -rf {} + 
 
 clean-docs:
 	$(MAKE) -C $(DOCDIR) clean
 
 clean-build:
-	rm --force --recursive build
-	rm --force --recursive dist
-	rm --force --recursive *.egg-info
+	rm -rf build
+	rm -rf dist
+	rm -rf *.egg-info
