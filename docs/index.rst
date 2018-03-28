@@ -19,6 +19,47 @@ around Elastic Cloud without having to write a client again and again.
 ``elastic_cloud`` comes with a basic command line interface. after installation, run ``elastic-cloud --help``
 to get information about the usage.
 
+::
+
+    usage: elastic-cloud [-h] [--endpoint ENDPOINT] [--user USER]
+                         [--password PASSWORD] [--query QUERY] [--body BODY]
+                         [--list-actions] [--format {json,text}] [--debug]
+                         [--client {stacks,elasticsearch-cluster,allocator,platform,api-docs,kibana-cluster}]
+                         [--action ACTION] [--version]
+
+    Command-line interface for Elastic Cloud.
+
+    Examples:
+
+        List all actions for elasticsearch clusters:
+
+        $ elastic-cloud --list-actions --format json --query 'actions[?starts_with(name, `elasticsearch-cluster::`)]'
+
+        Get the API documentation in swagger format
+
+        $ elastic-cloud --client api-docs --action get-api-docs --user myuser --password mypassword
+
+    For more information, visit https://elastic.co/guide/en/cloud-enterprise/current/ece-api-reference.html
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --endpoint ENDPOINT   the elastic cloud endpoint
+      --user USER           the user to authorize with
+      --password PASSWORD   the password to authorize with
+      --query QUERY         jmespath expression to filter the output
+      --body BODY           path to a file or raw body
+      --list-actions        list all available actions
+      --format {json,text}  output format for list-actions
+      --debug               enable verbose logging
+      --client {stacks,elasticsearch-cluster,allocator,platform,api-docs,kibana-cluster}
+                            use an elastic cloud client
+      --action ACTION       execute an api action
+      --version             show version
+
+    Contribute to elastic-cloud!
+        https://github.com/teekaay/elastic-cloud-py
+
+
 .. note::
 
     We will refer to the product `Elastic Cloud Enterprise` as to `Elastic Cloud` in the following.
