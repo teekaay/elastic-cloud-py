@@ -124,8 +124,6 @@ def main():
         for m in client_methods:
             action_pairs.append({'name': '{}::{}'.format(client_name, m['name']), 'doc': m['doc'] })
 
-    print(args)
-
     if args.list_actions:
         action_pairs = { 'actions': action_pairs }
         if args.query is not None:
