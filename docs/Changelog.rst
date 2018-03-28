@@ -1,1 +1,9 @@
-../Changelog.rst
+.. _changelog:
+
+Changelog
+=========
+
+1.1
+---
+
+Initial release
